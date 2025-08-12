@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জিসান ভাই - ডাকসু নির্বাচন ২০২৫</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Light theme colors */
+            --primary: #1976D2;
+            --primary-variant: #1565C0;
+            --secondary: #03DAC6;
+            --background: #FAFAFA;
+            --surface: #FFFFFF;
+            --error: #B00020;
+            --on-primary: #FFFFFF;
+            --on-secondary: #000000;
+            --on-background: #1C1C1E;
+            --on-surface: #1C1C1E;
+            --outline: #79747E;
+            
+            /* Surface variants */
+            --surface-1: #F2F2F7;
+            --surface-2: #E5E5EA;
+            --surface-3: #D1D1D6;
+            
+            /* Elevation shadows */
+            --elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --elevation-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            --elevation-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+
+        [data-theme="dark"] {
+            --primary: #BB86FC;
+            --primary-variant: #3700B3;
+            --secondary: #03DAC6;
+            --background: #121212;
+            --surface: #1E1E1E;
+            --error: #CF6679;
+            --on-primary: #000000;
+            --on-secondary: #000000;
+            --on-background: #E1E1E1;
+            --on-surface: #E1E1E1;
+            --outline: #938F99;
+            --surface-1: #2D2D2D;
+            --surface-2: #3A3A3A;
+            --surface-3: #474747;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--on-background);
+            line-height: 1.6;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            padding-bottom: 80px;
+        }
+
+        .container {
+            max-width: 428px;
+            margin: 0 auto;
+            background: var(--surface);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--outline);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--on-surface);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface-1);
+        }
+
+        /* Page content */
+        .page {
+            display: none;
+            padding: 0 20px 20px;
+            animation: fadeInUp 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-variant));
+            color: var(--on-primary);
+            margin: 0 -20px 30px;
+            border-radius: 0 0 24px 24px;
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            background: var(--surface);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary);
+            box-shadow: var(--elevation-2);
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--on-secondary);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: var(--elevation-1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--elevation-2);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--elevation-1);
+            border: 1px solid var(--surface-2);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--elevation-2);
+            transform: translateY(-1px);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card p {
+            color: var(--on-surface);
+            margin-bottom: 12px;
+        }
+
+        /* List items */
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--surface-2);
+            transition: all 0.2s;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item:hover {
+            background: var(--surface-1);
+            margin: 0 -24px;
+            padding: 16px 24px;
+            border-radius: 8px;
+        }
+
+        .list-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            background: var(--primary);
+            color: var(--on-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        .list-item-content {
+            flex: 1;
+        }
+
+        .list-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .list-item-subtitle {
+            font-size: 14px;
+            color: var(--outline);
+        }
+
+        /* Video gallery */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .video-item {
+            background: var(--surface-2);
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .video-item:hover {
+            transform: scale(1.02);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--surface-2), var(--surface-3));
+            color: var(--outline);
+            font-size: 48px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--on-surface);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--surface-2);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--on-surface);
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-input::placeholder {
+            color: var(--outline);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Bottom navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 428px;
+            background: var(--surface);
+            border-top: 1px solid var(--surface-2);
+            display: flex;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            padding: 12px 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            background: transparent;
+            color: var(--outline);
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .nav-item span {
+            font-size: 12px;
+            display: block;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: var(--surface-1);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--outline);
+            margin-top: 4px;
+        }
+
+        /* Poetry section */
+        .poem {
+            background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 16px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .poem-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-style: normal;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 376px) {
+            .container {
+                margin: 0;
+            }
+            
+            .page {
+                padding: 0 16px 20px;
+            }
+            
+            .hero {
+                margin: 0 -16px 20px;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--surface-2);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">জিসান ভাই</div>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </header>
+
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <div class="hero-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h1>জিসান ভাই</h1>
+                <p>ছাত্রদল প্রার্থী • ডাকসু নির্বাচন ২০২৫</p>
+                <button class="cta-button" onclick="showPage('volunteer')">
+                    স্বেচ্ছাসেবক হয়ে যোগ দিন
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">৫+</span>
+                    <span class="stat-label">বছর অভিজ্ঞতা</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">১০০+</span>
+                    <span class="stat-label">আন্দোলনে অংশগ্রহণ</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">৫০০+</span>
+                    <span class="stat-label">সমর্থক</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-bullhorn"></i> আমাদের প্রতিশ্রুতি</h3>
+                <p>শিক্ষার্থীদের অধিকার রক্ষা, গণতান্ত্রিক পরিবেশ নিশ্চিত করা এবং একটি উন্নত ক্যাম্পাস গড়ে তোলার জন্য আমরা প্রতিশ্রুতিবদ্ধ।</p>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-calendar-alt"></i> সাম্প্রতিক কার্যক্রম</h3>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">শিক্ষা সমাবেশ</div>
+                        <div class="list-item-subtitle">গত সপ্তাহে • ঢাকা বিশ্ববিদ্যালয়</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">সাহায্য বিতরণ</div>
+                        <div class="list-item-subtitle">১০ দিন আগে • আশেপাশের এলাকায়</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Biography Page -->
+        <div id="biography" class="page">
+            <div class="card">
+                <h3><i class="fas fa-user-circle"></i> জীবনী</h3>
+                <p><strong>নাম:</strong> জিসান ভাই</p>
+                <p><strong>বিভাগ:</strong> রাষ্ট্রবিজ্ঞান</p>
+                <p><strong>সেশন:</strong> ২০১৯-২০</p>
+                <p><strong>হল:</strong> সূর্যসেন হল</p>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-graduation-cap"></i> শিক্ষাগত যোগ্যতা</h3>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">স্নাতক (সম্মান)</div>
+                        <div class="list-item-subtitle">রাষ্ট্রবিজ্ঞান • ঢাকা বিশ্ববিদ্যালয়</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">উচ্চ মাধ্যমিক</div>
+                        <div class="list-item-subtitle">বিজ্ঞান বিভাগ • ঢাকা কলেজ</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-heart"></i> ব্যক্তিগত তথ্য</h3>
+                <p>জন্মস্থান: ঢাকা, বাংলাদেশ</p>
+                <p>পরিবার: মধ্যবিত্ত পরিবারের সন্তান, বাবা সরকারি চাকুরে, মা গৃহিণী</p>
+                <p>আগ্রহ: রাজনীতি, সাহিত্য, ক্রিকেট</p>
+                <p>স্বপ্ন: একটি উন্নত ও গণতান্ত্রিক বাংলাদেশ গড়তে অবদান রাখা</p>
+            </div>
+        </div>
+
+        <!-- Movement History Page -->
+        <div id="movement" class="page">
+            <div class="card">
+                <h3><i class="fas fa-fist-raised"></i> আন্দোলনের ইতিহাস</h3>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">ভর্তি বৈষম্য বিরোধী আন্দোলন</div>
+                        <div class="list-item-subtitle">২০২৩ • নেতৃত্ব প্রদান</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">ন্যায়বিচার আন্দোলন</div>
+                        <div class="list-item-subtitle">২০২২ • সংগঠক হিসেবে কাজ</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">শিক্ষার অধিকার আন্দোলন</div>
+                        <div class="list-item-subtitle">২০২১ • সক্রিয় অংশগ্রহণকারী</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">ছাত্র অধিকার রক্ষা কমিটি</div>
+                        <div class="list-item-subtitle">২০২০ • প্রতিষ্ঠাতা সদস্য</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-trophy"></i> অর্জনসমূহ</h3>
+                <p>• সেরা ছাত্র নেতা পুরস্কার ২০২৩</p>
+                <p>• জাতীয় বিতর্ক প্রতিযোগিতায় ২য় স্থান</p>
+                <p>• সাংস্কৃতিক সপ্তাহে শ্রেষ্ঠ সংগঠক</p>
+                <p>• ৫০+ টি সামাজিক সেবামূলক কর্মসূচি পরিচালনা</p>
+            </div>
+        </div>
+
+        <!-- Video Gallery Page -->
+        <div id="videos" class="page">
+            <div class="video-grid">
+                <div class="video-item" onclick="playVideo('speech1')">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-overlay">প্রচারণামূলক ভাষণ - শিক্ষার অধিকার</div>
+                </div>
+                <div class="video-item" onclick="playVideo('rally1')">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-overlay">সাম্প্রতিক সমাবেশের ভিডিও</div>
+                </div>
+                <div class="video-item" onclick="playVideo('interview1')">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-overlay">টিভি সাক্ষাৎকার - ভবিষ্যৎ পরিকল্পনা</div>
+                </div>
+                <div class="video-item" onclick="playVideo('movement1')">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-overlay">আন্দোলনের স্মৃতি - ২০২৩</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-info-circle"></i> ভিডিও সংগ্রহ</h3>
+                <p>এখানে জিসান ভাই এর গুরুত্বপূর্ণ ভাষণ, সাক্ষাৎকার, আন্দোলনের ভিডিও এবং প্রচারণামূলক কন্টেন্ট রয়েছে। প্রতিটি ভিডিও আমাদের আন্দোলন ও লক্ষ্যের বিভিন্ন দিক তুলে ধরে।</p>
+            </div>
+        </div>
+
+        <!-- Vision Page -->
+        <div id="vision" class="page">
+            <div class="card">
+                <h3><i class="fas fa-eye"></i> ভবিষ্যৎ দৃষ্টিভঙ্গি</h3>
+                <p>একটি উন্নত, গণতান্ত্রিক এবং শিক্ষার্থী-বান্ধব ঢাকা বিশ্ববিদ্যালয় গড়ে তোলাই আমাদের মূল লক্ষ্য।</p>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-tasks"></i> মূল পরিকল্পনা</h3>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">শিক্ষার মান উন্নয়ন</div>
+                        <div class="list-item-subtitle">আধুনিক পাঠ্যক্রম ও গবেষণা সুবিধা</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">আবাসন সমস্যার সমাধান</div>
+                        <div class="list-item-subtitle">নতুন হল নির্মাণ ও সিট বৃদ্ধি</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-medkit"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">স্বাস্থ্যসেবা উন্নতি</div>
+                        <div class="list-item-subtitle">চিকিৎসা কেন্দ্র আধুনিকীকরণ</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">ডিজিটাল ক্যাম্পাস</div>
+                        <div class="list-item-subtitle">সর্বত্র ইন্টারনেট ও ডিজিটাল সুবিধা</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-handshake"></i> প্রতিশ্রুতি</h3>
+                <p>• শিক্ষার্থীদের মতামতের গুরুত্ব দেওয়া</p>
+                <p>• স্বচ্ছ ও জবাবদিহিতামূলক প্রশাসন</p>
+                <p>• সকল ধর্ম ও মতের প্রতি সমান আচরণ</p>
+                <p>• নিয়মিত শিক্ষার্থী সভা আয়োজন</p>
+                <p>• দুর্নীতির বিরুদ্ধে জিরো টলারেন্স</p>
+            </div>
+        </div>
+
+        <!-- Poetry Page -->
+        <div id="poetry" class="page">
+            <div class="card">
+                <h3><i class="fas fa-feather-alt"></i> কবিতা সংগ্রহ</h3>
+                <p>আন্দোলন ও স্বপ্নের প্রেরণায় রচিত কবিতাসমূহ</p>
+            </div>
+
+            <div class="poem">
+                <div class="poem-title">স্বপ্নের বিশ্ববিদ্যালয়</div>
+                <p>যেখানে জ্ঞানের আলো জ্বলে উজ্জ্বল,<br>
+                শিক্ষার্থীদের হাসি মুখে ফুটে ফল।<br>
+                গণতন্ত্রের চেতনায় গড়া সে ক্যাম্পাস,<br>
+                সবার অধিকার নিশ্চিত, নেই কোন ভাঙা আস।</p>
+            </div>
+
+            <div class="poem">
+                <div class="poem-title">আন্দোলনের গান</div>
+                <p>উঠো তরুণ, জাগো সবাই,<br>
+                ন্যায়ের জন্য লড়াই করাই।<br>
+                শিক্ষার অধিকার আমাদের দাবি,<br>
+                গড়বো নতুন ভবিষ্যৎ, হবো আমরা রাজি।</p>
+            </div>
+
+            <div class="poem">
+                <div class="poem-title">মুক্তির প্রত্যাশা</div>
+                <p>অন্ধকারের বুক চিরে আসে আলোর রেখা,<br>
+                নতুন দিনের স্বপ্নে মন করি দেখা।<br>
+                শিক্ষার্থীদের কল্যাণে কাজ করব আজীবন,<br>
+                গড়বো সোনার বাংলা, এই আমার প্রণ।</p>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-pen-fancy"></i> কবিতার অনুপ্রেরণা</h3>
+                <p>এই কবিতাগুলো আমাদের আন্দোলনের চেতনা, স্বপ্ন এবং দৃঢ় প্রত্যয়ের প্রতিফলন। প্রতিটি লাইনে রয়েছে একটি উন্নত ভবিষ্যতের প্রত্যাশা এবং শিক্ষার্থীদের কল্যাণের অঙ্গীকার।</p>
+            </div>
+        </div>
+
+        <!-- Volunteer Page -->
+        <div id="volunteer" class="page">
+            <div class="card">
+                <h3><i class="fas fa-hands-helping"></i> স্বেচ্ছাসেবক হয়ে যোগ দিন</h3>
+                <p>আমাদের আন্দোলনে অংশ নিন এবং একটি উন্নত ক্যাম্পাস গড়তে সহায়তা করুন।</p>
+            </div>
+
+            <div class="card">
+                <form onsubmit="submitVolunteerForm(event)">
+                    <div class="form-group">
+                        <label class="form-label">নাম *</label>
+                        <input type="text" class="form-input" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">ইমেইল *</label>
+                        <input type="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">ফোন নম্বর *</label>
+                        <input type="tel" class="form-input" placeholder="01XXXXXXXXX" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">বিভাগ/অনুষদ</label>
+                        <input type="text" class="form-input" placeholder="যেমন: রাষ্ট্রবিজ্ঞান">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">আগ্রহের ক্ষেত্র</label>
+                        <select class="form-input">
+                            <option value="">নির্বাচন করুন</option>
+                            <option value="campaign">প্রচারণা কার্যক্রম</option>
+                            <option value="social">সামাজিক সেবা</option>
+                            <option value="media">মিডিয়া ও যোগাযোগ</option>
+                            <option value="event">অনুষ্ঠান আয়োজন</option>
+                            <option value="tech">প্রযুক্তিগত সহায়তা</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">বার্তা (ঐচ্ছিক)</label>
+                        <textarea class="form-input form-textarea" placeholder="আপনার মতামত বা পরামর্শ লিখুন..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%;">
+                        <span id="submit-text">যোগদানের আবেদন করুন</span>
+                        <span id="submit-loading" class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-info-circle"></i> কেন আমাদের সাথে থাকবেন?</h3>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">দলগত কাজের অভিজ্ঞতা</div>
+                        <div class="list-item-subtitle">নেতৃত্ব ও সহযোগিতার মূল্যবোধ</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">সৃজনশীলতার বিকাশ</div>
+                        <div class="list-item-subtitle">নতুন ধারণা ও উদ্ভাবন</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="list-item-content">
+                        <div class="list-item-title">নেটওয়ার্কিং সুযোগ</div>
+                        <div class="list-item-subtitle">বিভিন্ন ক্ষেত্রের মানুষের সাথে পরিচিতি</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="showPage('home')">
+                <i class="fas fa-home"></i>
+                <span>হোম</span>
+            </button>
+            <button class="nav-item" onclick="showPage('biography')">
+                <i class="fas fa-user"></i>
+                <span>জীবনী</span>
+            </button>
+            <button class="nav-item" onclick="showPage('movement')">
+                <i class="fas fa-fist-raised"></i>
+                <span>আন্দোলন</span>
+            </button>
+            <button class="nav-item" onclick="showPage('videos')">
+                <i class="fas fa-video"></i>
+                <span>ভিডিও</span>
+            </button>
+            <button class="nav-item" onclick="showPage('vision')">
+                <i class="fas fa-eye"></i>
+                <span>দৃষ্টিভঙ্গি</span>
+            </button>
+            <button class="nav-item" onclick="showPage('poetry')">
+                <i class="fas fa-feather-alt"></i>
+                <span>কবিতা</span>
+            </button>
+            <button class="nav-item" onclick="showPage('volunteer')">
+                <i class="fas fa-hands-helping"></i>
+                <span>যোগদান</span>
+            </button>
+        </nav>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (body.hasAttribute('data-theme')) {
+                body.removeAttribute('data-theme');
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize theme on load
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            event.target.closest('.nav-item').classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Video player simulation
+        function playVideo(videoId) {
+            const videoTitles = {
+                'speech1': 'প্রচারণামূলক ভাষণ - শিক্ষার অধিকার',
+                'rally1': 'সাম্প্রতিক সমাবেশের ভিডিও',
+                'interview1': 'টিভি সাক্ষাৎকার - ভবিষ্যৎ পরিকল্পনা',
+                'movement1': 'আন্দোলনের স্মৃতি - ২০২৩'
+            };
+            
+            alert(`ভিডিও চালানো হচ্ছে: ${videoTitles[videoId] || 'ভিডিও'}\n\nবাস্তব বাস্তবায়নে এখানে ভিডিও প্লেয়ার থাকবে।`);
+        }
+
+        // Form submission
+        function submitVolunteerForm(event) {
+            event.preventDefault();
+            
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const submitText = document.getElementById('submit-text');
+            const submitLoading = document.getElementById('submit-loading');
+            
+            // Show loading state
+            submitText.style.display = 'none';
+            submitLoading.style.display = 'inline-block';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('ধন্যবাদ! আপনার আবেদন সফলভাবে জমা হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+                
+                // Reset form
+                event.target.reset();
+                submitText.style.display = 'inline';
+                submitLoading.style.display = 'none';
+                submitButton.disabled = false;
+            }, 2000);
+        }
+
+        // Initialize app on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            
+            // Add smooth scroll behavior
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+            // Add touch feedback for better mobile experience
+            const interactiveElements = document.querySelectorAll('button, .card, .list-item, .video-item');
+            interactiveElements.forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        // Add swipe navigation for better mobile UX
+        let startX, startY, distX, distY;
+        const threshold = 150;
+        const restraint = 100;
+        
+        document.addEventListener('touchstart', function(e) {
+            startX = e.changedTouches[0].pageX;
+            startY = e.changedTouches[0].pageY;
+        });
+        
+        document.addEventListener('touchend', function(e) {
+            distX = e.changedTouches[0].pageX - startX;
+            distY = e.changedTouches[0].pageY - startY;
+            
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+                const pages = ['home', 'biography', 'movement', 'videos', 'vision', 'poetry', 'volunteer'];
+                const currentPage = document.querySelector('.page.active').id;
+                const currentIndex = pages.indexOf(currentPage);
+                
+                if (distX > 0 && currentIndex > 0) {
+                    // Swipe right - previous page
+                    const prevPage = pages[currentIndex - 1];
+                    showPage(prevPage);
+                    
+                    // Update nav
+                    const navItems = document.querySelectorAll('.nav-item');
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navItems[currentIndex - 1].classList.add('active');
+                } else if (distX < 0 && currentIndex < pages.length - 1) {
+                    // Swipe left - next page
+                    const nextPage = pages[currentIndex + 1];
+                    showPage(nextPage);
+                    
+                    // Update nav
+                    const navItems = document.querySelectorAll('.nav-item');
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navItems[currentIndex + 1].classList.add('active');
+                }
+            }
+        });
+
+        // Progressive Web App features
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // In a real implementation, you would register a service worker here
+                console.log('PWA ready for service worker registration');
+            });
+        }
+
+        // Dynamic content loading simulation
+        function loadDynamicContent() {
+            // In a real implementation, this would fetch data from an API
+            console.log('Loading dynamic content...');
+        }
+
+        // Analytics tracking simulation
+        function trackPageView(page) {
+            console.log(`Page viewed: ${page}`);
+            // In a real implementation, you would send this to analytics service
+        }
+    </script>
+</body>
+</html>

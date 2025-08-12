@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জিসান ভাই - ডাকসু নির্বাচন ২০২৪</title>
+    <meta name="description" content="জিসান ভাই - ছাত্রদলের প্রার্থী, ডাকসু নির্বাচন ২০২৪">
+    
+     Fonts 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+     Styles 
+    <link rel="stylesheet" href="styles.css">
+    
+     AOS Animation Library 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+     Loading Screen 
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">জিসান ভাই</div>
+            <div class="loading-spinner"></div>
+            <p>আন্দোলনে যোগ দিন...</p>
+        </div>
+    </div>
+
+     Hero Section with Video Background 
+    <section id="hero" class="hero-section">
+        <video id="hero-video" autoplay muted loop playsinline>
+            <source src="/placeholder.mp4?height=1080&width=1920&query=political rally street movement students marching with flags" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="500">
+                <span class="highlight">জিসান ভাই</span><br>
+                <span class="subtitle">ছাত্রদলের প্রার্থী</span>
+            </h1>
+            <p class="hero-slogan" data-aos="fade-up" data-aos-delay="800">
+                "ছাত্রদের অধিকার, আমাদের দাবি<br>
+                নতুন ডাকসু, নতুন স্বপ্ন"
+            </p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="1100">
+                <button class="fab-primary" id="join-movement">
+                    <span class="material-symbols-outlined">group_add</span>
+                    আন্দোলনে যোগ দিন
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1500">
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+     Navigation 
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="#hero" class="nav-item active" data-section="hero">
+            <span class="material-symbols-outlined">home</span>
+            <span>হোম</span>
+        </a>
+        <a href="#biography" class="nav-item" data-section="biography">
+            <span class="material-symbols-outlined">person</span>
+            <span>জীবনী</span>
+        </a>
+        <a href="#struggle" class="nav-item" data-section="struggle">
+            <span class="material-symbols-outlined">campaign</span>
+            <span>সংগ্রাম</span>
+        </a>
+        <a href="#videos" class="nav-item" data-section="videos">
+            <span class="material-symbols-outlined">play_circle</span>
+            <span>ভিডিও</span>
+        </a>
+        <a href="#vision" class="nav-item" data-section="vision">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <span>ভবিষ্যৎ</span>
+        </a>
+    </nav>
+
+     Dark Mode Toggle 
+    <button class="theme-toggle" id="theme-toggle">
+        <span class="material-symbols-outlined">dark_mode</span>
+    </button>
+
+     Biography Section 
+    <section id="biography" class="section biography-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">জীবনী ও পরিচয়</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="শৈশব" loading="lazy">
+                            <div class="card-content">
+                                <h3>শৈশব ও প্রাথমিক জীবন</h3>
+                                <p>১৯৯৮ সালে ঢাকার একটি মধ্যবিত্ত পরিবারে জন্মগ্রহণ। ছোটবেলা থেকেই ন্যায়বিচার ও সামাজিক কাজে আগ্রহী।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="শিক্ষাজীবন" loading="lazy">
+                            <div class="card-content">
+                                <h3>শিক্ষাজীবন</h3>
+                                <p>ঢাকা বিশ্ববিদ্যালয়ে রাষ্ট্রবিজ্ঞান বিভাগে অধ্যয়নরত। একাডেমিক পারফরমেন্সের পাশাপাশি সামাজিক কর্মকাণ্ডে সক্রিয়।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="রাজনৈতিক জীবন" loading="lazy">
+                            <div class="card-content">
+                                <h3>রাজনৈতিক জীবনের শুরু</h3>
+                                <p>২০১৮ সালে ছাত্রদলে যোগদান। ছাত্রদের অধিকার রক্ষায় নিরলস কাজ করে যাচ্ছেন।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Struggle & Movement Section 
+    <section id="struggle" class="section struggle-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">সংগ্রাম ও আন্দোলন</h2>
+            <div class="struggle-grid">
+                <div class="struggle-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-media">
+                        <img src="/placeholder.svg?height=250&width=400" alt="ছাত্র অধিকার আন্দোলন" loading="lazy">
+                        <div class="play-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>ছাত্র অধিকার আন্দোলন</h3>
+                        <p>২০২২ সালে হল সংকট ও শিক্ষার্থীদের সমস্যা নিয়ে জোরালো আন্দোলন।</p>
+                        <span class="date">মার্চ ২০২২</span>
+                    </div>
+                </div>
+                
+                <div class="struggle-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-media">
+                        <img src="/placeholder.svg?height=250&width=400" alt="গণতান্ত্রিক আন্দোলন" loading="lazy">
+                        <div class="play-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>গণতান্ত্রিক আন্দোলন</h3>
+                        <p>ক্যাম্পাসে গণতান্ত্রিক পরিবেশ ফিরিয়ে আনতে নেতৃত্ব দিয়েছেন।</p>
+                        <span class="date">জুলাই ২০২৩</span>
+                    </div>
+                </div>
+                
+                <div class="struggle-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-media">
+                        <img src="/placeholder.svg?height=250&width=400" alt="সামাজিক আন্দোলন" loading="lazy">
+                        <div class="play-button">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>সামাজিক আন্দোলন</h3>
+                        <p>দুর্নীতি বিরোধী আন্দোলন ও স্বচ্ছতার জন্য কাজ করেছেন।</p>
+                        <span class="date">নভেম্বর ২০২৩</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Video Gallery Section 
+    <section id="videos" class="section video-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">ভিডিও গ্যালারি</h2>
+            <div class="video-grid">
+                <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=350" alt="প্রচারণা ভাষণ" loading="lazy">
+                        <div class="play-overlay">
+                            <span class="material-symbols-outlined">play_circle</span>
+                        </div>
+                        <div class="video-duration">৫:৩২</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>প্রচারণা ভাষণ - ছাত্রদের ভবিষ্যৎ</h3>
+                        <p>ডাকসু নির্বাচনে জিসান ভাইয়ের প্রধান প্রচারণা ভাষণ</p>
+                    </div>
+                </div>
+                
+                <div class="video-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=350" alt="মাঠ পর্যায়ে কাজ" loading="lazy">
+                        <div class="play-overlay">
+                            <span class="material-symbols-outlined">play_circle</span>
+                        </div>
+                        <div class="video-duration">৩:১৫</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>মাঠ পর্যায়ে কাজ</h3>
+                        <p>বিভিন্ন হলে গিয়ে ছাত্রদের সমস্যা শোনা</p>
+                    </div>
+                </div>
+                
+                <div class="video-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-thumbnail">
+                        <img src="/placeholder.svg?height=200&width=350" alt="ছাত্রদের প্রতিক্রিয়া" loading="lazy">
+                        <div class="play-overlay">
+                            <span class="material-symbols-outlined">play_circle</span>
+                        </div>
+                        <div class="video-duration">৪:৪৮</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>ছাত্রদের প্রতিক্রিয়া</h3>
+                        <p>জিসান ভাই সম্পর্কে সহপাঠীদের মতামত</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Future Vision Section 
+    <section id="vision" class="section vision-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">ভবিষ্যতের স্বপ্ন</h2>
+            <div class="vision-grid">
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">school</span>
+                    </div>
+                    <h3>শিক্ষার মান উন্নয়ন</h3>
+                    <p>আধুনিক শিক্ষা ব্যবস্থা ও গবেষণার সুবিধা বৃদ্ধি</p>
+                </div>
+                
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <h3>আবাসন সমস্যার সমাধান</h3>
+                    <p>সকল ছাত্রছাত্রীর জন্য মানসম্পন্ন আবাসনের ব্যবস্থা</p>
+                </div>
+                
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">sports</span>
+                    </div>
+                    <h3>খেলাধুলা ও সাংস্কৃতিক কার্যক্রম</h3>
+                    <p>নিয়মিত খেলাধুলা ও সাংস্কৃতিক অনুষ্ঠানের আয়োজন</p>
+                </div>
+                
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">health_and_safety</span>
+                    </div>
+                    <h3>স্বাস্থ্যসেবা উন্নতি</h3>
+                    <p>ছাত্রছাত্রীদের জন্য উন্নত চিকিৎসা সেবার ব্যবস্থা</p>
+                </div>
+                
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">work</span>
+                    </div>
+                    <h3>কর্মসংস্থানের সুযোগ</h3>
+                    <p>স্নাতকদের জন্য চাকরির সুযোগ সৃষ্টি ও দক্ষতা উন্নয়ন</p>
+                </div>
+                
+                <div class="vision-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="vision-icon">
+                        <span class="material-symbols-outlined">balance</span>
+                    </div>
+                    <h3>ন্যায়বিচার প্রতিষ্ঠা</h3>
+                    <p>ক্যাম্পাসে ন্যায়বিচার ও স্বচ্ছতা নিশ্চিতকরণ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Poetry & Voice Section 
+    <section id="poetry" class="section poetry-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">কবিতা ও কণ্ঠস্বর</h2>
+            <div class="poetry-container">
+                <div class="poetry-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="poetry-content">
+                        <h3>আমাদের স্বপ্নের ডাকসু</h3>
+                        <div class="poetry-lines">
+                            <p class="poetry-line">জেগে উঠো হে তরুণ, জেগে উঠো আজ</p>
+                            <p class="poetry-line">নতুন সূর্যের আলোয় মিটাও সব লাজ</p>
+                            <p class="poetry-line">ছাত্রদের অধিকার, আমাদের দাবি</p>
+                            <p class="poetry-line">গড়ব আমরা নতুন ডাকসু, নতুন স্বপ্নের রাজি</p>
+                        </div>
+                        <button class="voice-play-btn">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                            কবিতা শুনুন
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="poetry-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="poetry-content">
+                        <h3>সংগ্রামের গান</h3>
+                        <div class="poetry-lines">
+                            <p class="poetry-line">এগিয়ে চলো, পিছু হটো না</p>
+                            <p class="poetry-line">সত্যের পথে থেমো না</p>
+                            <p class="poetry-line">জিসান ভাইয়ের সাথে চলো</p>
+                            <p class="poetry-line">নতুন দিনের স্বপ্ন দেখো</p>
+                        </div>
+                        <button class="voice-play-btn">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                            কবিতা শুনুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Get Involved Section 
+    <section id="get-involved" class="section involvement-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">আমাদের সাথে যুক্ত হন</h2>
+            
+            <div class="involvement-content">
+                <div class="signup-form-container" data-aos="fade-right">
+                    <form class="signup-form" id="signup-form">
+                        <h3>আন্দোলনে যোগ দিন</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">নাম *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="campus">ক্যাম্পাস/বিভাগ *</label>
+                            <input type="text" id="campus" name="campus" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">মোবাইল নম্বর *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">ইমেইল</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">আগ্রহের ক্ষেত্র</label>
+                            <select id="interest" name="interest">
+                                <option value="">নির্বাচন করুন</option>
+                                <option value="campaign">প্রচারণা</option>
+                                <option value="volunteer">স্বেচ্ছাসেবক</option>
+                                <option value="social-media">সোশ্যাল মিডিয়া</option>
+                                <option value="event">অনুষ্ঠান সংগঠন</option>
+                            </select>
+                        </div>
+                        
+                        <div class="captcha-container">
+                            <div class="captcha-question" id="captcha-question"></div>
+                            <input type="text" id="captcha-answer" placeholder="উত্তর লিখুন" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="material-symbols-outlined">send</span>
+                            যোগ দিন
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="social-links" data-aos="fade-left">
+                    <h3>সামাজিক যোগাযোগ</h3>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn telegram">
+                            <span class="material-symbols-outlined">telegram</span>
+                            টেলিগ্রাম গ্রুপ
+                        </a>
+                        <a href="#" class="social-btn whatsapp">
+                            <span class="material-symbols-outlined">chat</span>
+                            হোয়াটসঅ্যাপ গ্রুপ
+                        </a>
+                        <a href="#" class="social-btn facebook">
+                            <span class="material-symbols-outlined">facebook</span>
+                            ফেসবুক পেজ
+                        </a>
+                    </div>
+                    
+                    <div class="testimonials">
+                        <h4>সমর্থকদের মতামত</h4>
+                        <div class="testimonial-slider" id="testimonial-slider">
+                            <div class="testimonial active">
+                                <p>"জিসান ভাই সত্যিকারের ছাত্রনেতা। তার নেতৃত্বে আমরা নতুন ডাকসু দেখতে পাব।"</p>
+                                <cite>- রহিম, রাষ্ট্রবিজ্ঞান বিভাগ</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"আমাদের সমস্যাগুলো বুঝেন এবং সমাধানের জন্য কাজ করেন। এমন নেতার প্রয়োজন ছিল।"</p>
+                                <cite>- ফাতেমা, ইংরেজি বিভাগ</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"সৎ, নিষ্ঠাবান এবং ছাত্রদের কল্যাণে নিবেদিত। জিসান ভাইকে সমর্থন করি।"</p>
+                                <cite>- করিম, ব্যবসায় প্রশাসন</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Footer 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>জিসান ভাই</h3>
+                    <p>ছাত্রদলের প্রার্থী - ডাকসু নির্বাচন ২০২৪</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">গোপনীয়তা নীতি</a>
+                    <a href="#terms">শর্তাবলী</a>
+                    <a href="#contact">যোগাযোগ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ২০২৪ জিসান ভাই ক্যাম্পেইন। সকল অধিকার সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+     Video Modal 
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-close">&times;</button>
+            <video id="modal-video" controls>
+                <source src="/placeholder.svg" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+     Scripts 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
