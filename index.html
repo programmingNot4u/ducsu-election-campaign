@@ -1,167 +1,341 @@
 <!DOCTYPE html>
 <html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>জিসান ভাই - ডাকসু প্রার্থী | ছাত্রদল</title>
-    <meta name="description" content="জিসান ভাই - ডাকসু নির্বাচনে ছাত্রদলের প্রার্থী। ছাত্র আন্দোলনের নেতা, ভবিষ্যতের স্বপ্নদ্রষ্টা।">
+    <meta
+      name="description"
+      content="জিসান ভাই - ডাকসু নির্বাচনে ছাত্রদলের প্রার্থী। ছাত্র আন্দোলনের নেতা, ভবিষ্যতের স্বপ্নদ্রষ্টা।" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="theme-color" content="#1976d2">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+    <meta name="theme-color" content="#1976d2" />
     <style>
-        :root {
-            --primary: #1976d2; --primary-variant: #1565c0; --secondary: #03dac6; --background: #ffffff; --surface: #ffffff; --error: #b00020; --on-primary: #ffffff; --on-secondary: #000000; --on-background: #000000; --on-surface: #000000; --on-error: #ffffff; --shadow: rgba(0, 0, 0, 0.1);
-        }
-        [data-theme="dark"] {
-            --primary: #90caf9; --primary-variant: #64b5f6; --secondary: #03dac6; --background: #121212; --surface: #1e1e1e; --error: #cf6679; --on-primary: #000000; --on-secondary: #000000; --on-background: #ffffff; --on-surface: #ffffff; --on-error: #000000; --shadow: rgba(255, 255, 255, 0.1);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans Bengali', 'Inter', sans-serif; background-color: var(--background); color: var(--on-background); transition: all 0.3s ease; overflow-x: hidden; }
-        main { min-height: 100vh; padding-bottom: 80px; }
-        .material-card { background: var(--surface); border-radius: 16px; box-shadow: 0 2px 8px var(--shadow); transition: all 0.3s ease; }
-        .material-card:hover { box-shadow: 0 4px 16px var(--shadow); transform: translateY(-2px); }
-        .fab { position: fixed; bottom: 100px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--primary); color: var(--on-primary); border: none; box-shadow: 0 4px 12px var(--shadow); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 40; }
-        .fab:hover { transform: scale(1.1); }
-        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--shadow); display: flex; justify-content: space-around; padding: 8px 0; z-index: 50; }
-        .nav-item { display: flex; flex-direction: column; align-items: center; padding: 8px 12px; cursor: pointer; transition: all 0.3s ease; border-radius: 12px; min-width: 64px; color: var(--on-surface); text-decoration: none; }
-        .nav-item.active { background: rgba(25, 118, 210, 0.1); color: var(--primary); }
-        .nav-item span { font-size: 10px; margin-top: 4px; }
-        .hero-section { background: linear-gradient(135deg, var(--primary), var(--primary-variant)); color: var(--on-primary); padding: 60px 20px 40px; text-align: center; position: relative; overflow: hidden; }
-        .profile-image { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--on-primary); margin: 0 auto 20px; object-fit: cover; }
-        /* Other shared styles can go here */
-    </style>
-</head>
-<body>
+      :root {
+        --primary: #1976d2;
+        --primary-variant: #1565c0;
+        --secondary: #03dac6;
+        --background: #ffffff;
+        --surface: #ffffff;
+        --error: #b00020;
+        --on-primary: #ffffff;
+        --on-secondary: #000000;
+        --on-background: #000000;
+        --on-surface: #000000;
+        --on-error: #ffffff;
+        --shadow: rgba(0, 0, 0, 0.1);
+      }
+      [data-theme="dark"] {
+        --primary: #90caf9;
+        --primary-variant: #64b5f6;
+        --secondary: #03dac6;
+        --background: #121212;
+        --surface: #1e1e1e;
+        --error: #cf6679;
+        --on-primary: #000000;
+        --on-secondary: #000000;
+        --on-background: #ffffff;
+        --on-surface: #ffffff;
+        --on-error: #000000;
+        --shadow: rgba(255, 255, 255, 0.1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Sans Bengali", "Inter", sans-serif;
+        background-color: var(--background);
+        color: var(--on-background);
+        transition: all 0.3s ease;
+        overflow-x: hidden;
+      }
+      main {
+        min-height: 100vh;
+        padding-bottom: 80px;
+      }
+      .material-card {
+        background: var(--surface);
+        border-radius: 16px;
+        box-shadow: 0 2px 8px var(--shadow);
+        transition: all 0.3s ease;
+      }
+      .material-card:hover {
+        box-shadow: 0 4px 16px var(--shadow);
+        transform: translateY(-2px);
+      }
+      .fab {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--on-primary);
+        border: none;
+        box-shadow: 0 4px 12px var(--shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 40;
+      }
+      .fab:hover {
+        transform: scale(1.1);
+      }
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-top: 1px solid var(--shadow);
+        display: flex;
+        justify-content: space-around;
+        padding: 8px 0;
+        z-index: 50;
+      }
+      .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+        min-width: 64px;
+        color: var(--on-surface);
+        text-decoration: none;
+      }
+      .nav-item.active {
+        background: rgba(25, 118, 210, 0.1);
+        color: var(--primary);
+      }
+      .nav-item span {
+        font-size: 10px;
+        margin-top: 4px;
+      }
+      .hero-section {
+        background-image: url("./assets/images/profile_image.webp");
+        background-size: cover;
+        background-position: top center; /* keep face visible */
+        background-repeat: no-repeat;
 
+        color: var(--on-primary);
+        min-height: 60vh; /* reduced from 80vh */
+        max-height: 600px; /* cap the height */
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.25) 40%,
+          /* lighter on face */ rgba(0, 0, 0, 0.8) 100%
+            /* darker on bottom for text */
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid var(--on-primary);
+        margin: 0 auto 20px;
+        object-fit: cover;
+      }
+      /* Other shared styles can go here */
+    </style>
+  </head>
+  <body>
     <button class="fab" id="themeToggle">
-        <span class="material-icons">dark_mode</span>
+      <span class="material-icons">dark_mode</span>
     </button>
 
     <main>
-        <div class="hero-section">
-            <img src="https://via.placeholder.com/120" alt="জিসান ভাই" class="profile-image">
-            <h1 class="text-3xl font-bold mb-2">জিসান ভাই</h1>
-            <p class="text-lg mb-4">ডাকসু প্রার্থী | ছাত্রদল</p>
-            <p class="text-sm opacity-90">"ছাত্রদের অধিকার, আমাদের লড়াই"</p>
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="text-4xl md:text-5xl font-bold mb-3">
+            মমিনুল ইসলাম জিসান
+          </h1>
+
+          <p class="text-base md:text-lg opacity-90">
+            "ছাত্রদের অধিকার, আমাদের লড়াই"
+          </p>
         </div>
-        
-        <div class="p-4 space-y-4">
-            <div class="material-card p-6">
-                <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
-                    <span class="material-icons text-blue-600">campaign</span>
-                    আমাদের প্রতিশ্রুতি
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-start gap-3">
-                        <span class="material-icons text-green-600 mt-1">check_circle</span>
-                        <div>
-                            <h3 class="font-medium">শিক্ষার মান উন্নয়ন</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">আধুনিক শিক্ষা ব্যবস্থা ও গবেষণার সুবিধা</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-icons text-green-600 mt-1">check_circle</span>
-                        <div>
-                            <h3 class="font-medium">ছাত্র কল্যাণ</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">বৃত্তি ও আর্থিক সহায়তা বৃদ্ধি</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-icons text-green-600 mt-1">check_circle</span>
-                        <div>
-                            <h3 class="font-medium">ক্যাম্পাস নিরাপত্তা</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">নিরাপদ ও শান্তিপূর্ণ পরিবেশ</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="material-icons text-green-600 mt-1">check_circle</span>
-                        <div>
-                            <h3 class="font-medium">চাকরির সুযোগ</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">স্কিল ডেভেলপমেন্ট ও ক্যারিয়ার গাইডেন্স</p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+
+      <div class="p-4 space-y-4">
+        <div class="material-card p-6">
+          <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+            <span class="material-icons text-blue-600">campaign</span>
+            আমাদের প্রতিশ্রুতি
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-icons text-green-600 mt-1"
+                >check_circle</span
+              >
+              <div>
+                <h3 class="font-medium">শিক্ষার মান উন্নয়ন</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  আধুনিক শিক্ষা ব্যবস্থা ও গবেষণার সুবিধা
+                </p>
+              </div>
             </div>
-            
-            <div class="material-card p-6">
-                <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
-                    <span class="material-icons text-red-600">trending_up</span>
-                    সাম্প্রতিক কার্যক্রম
-                </h2>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                        <span class="material-icons text-blue-600">event</span>
-                        <div>
-                            <p class="font-medium">ছাত্র সমাবেশ</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">গতকাল, কার্জন হল</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                        <span class="material-icons text-green-600">volunteer_activism</span>
-                        <div>
-                            <p class="font-medium">বন্যা ত্রাণ বিতরণ</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">৩ দিন আগে, সিলেট</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex items-start gap-3">
+              <span class="material-icons text-green-600 mt-1"
+                >check_circle</span
+              >
+              <div>
+                <h3 class="font-medium">ছাত্র কল্যাণ</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  বৃত্তি ও আর্থিক সহায়তা বৃদ্ধি
+                </p>
+              </div>
             </div>
+            <div class="flex items-start gap-3">
+              <span class="material-icons text-green-600 mt-1"
+                >check_circle</span
+              >
+              <div>
+                <h3 class="font-medium">ক্যাম্পাস নিরাপত্তা</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  নিরাপদ ও শান্তিপূর্ণ পরিবেশ
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-icons text-green-600 mt-1"
+                >check_circle</span
+              >
+              <div>
+                <h3 class="font-medium">চাকরির সুযোগ</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  স্কিল ডেভেলপমেন্ট ও ক্যারিয়ার গাইডেন্স
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="material-card p-6">
+          <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+            <span class="material-icons text-red-600">trending_up</span>
+            সাম্প্রতিক কার্যক্রম
+          </h2>
+          <div class="space-y-3">
+            <div
+              class="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <span class="material-icons text-blue-600">event</span>
+              <div>
+                <p class="font-medium">ছাত্র সমাবেশ</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  গতকাল, কার্জন হল
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+              <span class="material-icons text-green-600"
+                >volunteer_activism</span
+              >
+              <div>
+                <p class="font-medium">বন্যা ত্রাণ বিতরণ</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  ৩ দিন আগে, সিলেট
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <nav class="bottom-nav">
-        <a href="index.html" class="nav-item active">
-            <span class="material-icons">home</span>
-            <span>হোম</span>
-        </a>
-        <a href="biography.html" class="nav-item">
-            <span class="material-icons">person</span>
-            <span>জীবনী</span>
-        </a>
-        <a href="movement.html" class="nav-item">
-            <span class="material-icons">history</span>
-            <span>আন্দোলন</span>
-        </a>
-        <a href="videos.html" class="nav-item">
-            <span class="material-icons">video_library</span>
-            <span>ভিডিও</span>
-        </a>
-        <a href="vision.html" class="nav-item">
-            <span class="material-icons">visibility</span>
-            <span>ভিশন</span>
-        </a>
- 
-        <a href="volunteer.html" class="nav-item">
-            <span class="material-icons">volunteer_activism</span>
-            <span>যোগদান</span>
-        </a>
+      <a href="index.html" class="nav-item active">
+        <span class="material-icons">home</span>
+        <span>হোম</span>
+      </a>
+      <a href="biography.html" class="nav-item">
+        <span class="material-icons">person</span>
+        <span>জীবনী</span>
+      </a>
+      <a href="movement.html" class="nav-item">
+        <span class="material-icons">history</span>
+        <span>আন্দোলন</span>
+      </a>
+      <a href="videos.html" class="nav-item">
+        <span class="material-icons">video_library</span>
+        <span>ভিডিও</span>
+      </a>
+      <a href="vision.html" class="nav-item">
+        <span class="material-icons">visibility</span>
+        <span>ভিশন</span>
+      </a>
+
+      <a href="volunteer.html" class="nav-item">
+        <span class="material-icons">volunteer_activism</span>
+        <span>যোগদান</span>
+      </a>
     </nav>
 
     <script>
-        // Theme Management
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
-            themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+      // Theme Management
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem("theme") || "light";
+      if (savedTheme === "dark") {
+        body.setAttribute("data-theme", "dark");
+        themeToggle.innerHTML =
+          '<span class="material-icons">light_mode</span>';
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = body.getAttribute("data-theme");
+        if (currentTheme === "dark") {
+          body.removeAttribute("data-theme");
+          themeToggle.innerHTML =
+            '<span class="material-icons">dark_mode</span>';
+          localStorage.setItem("theme", "light");
+        } else {
+          body.setAttribute("data-theme", "dark");
+          themeToggle.innerHTML =
+            '<span class="material-icons">light_mode</span>';
+          localStorage.setItem("theme", "dark");
         }
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                body.removeAttribute('data-theme');
-                themeToggle.innerHTML = '<span class="material-icons">dark_mode</span>';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
