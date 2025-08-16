@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভিডিও গ্যালারি - জিসান ভাই</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#1976d2">
+    <style>
+        :root {
+            --primary: #1976d2; --primary-variant: #1565c0; --secondary: #03dac6; --background: #ffffff; --surface: #ffffff; --error: #b00020; --on-primary: #ffffff; --on-secondary: #000000; --on-background: #000000; --on-surface: #000000; --on-error: #ffffff; --shadow: rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] {
+            --primary: #90caf9; --primary-variant: #64b5f6; --secondary: #03dac6; --background: #121212; --surface: #1e1e1e; --error: #cf6679; --on-primary: #000000; --on-secondary: #000000; --on-background: #ffffff; --on-surface: #ffffff; --on-error: #000000; --shadow: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans Bengali', 'Inter', sans-serif; background-color: var(--background); color: var(--on-background); transition: all 0.3s ease; overflow-x: hidden; }
+        main { min-height: 100vh; padding-bottom: 80px; padding-top: 20px; }
+        .material-card { background: var(--surface); border-radius: 16px; box-shadow: 0 2px 8px var(--shadow); transition: all 0.3s ease; }
+        .material-card:hover { box-shadow: 0 4px 16px var(--shadow); transform: translateY(-2px); }
+        .fab { position: fixed; bottom: 100px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--primary); color: var(--on-primary); border: none; box-shadow: 0 4px 12px var(--shadow); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 40; }
+        .fab:hover { transform: scale(1.1); }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--shadow); display: flex; justify-content: space-around; padding: 8px 0; z-index: 50; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; padding: 8px 12px; cursor: pointer; transition: all 0.3s ease; border-radius: 12px; min-width: 64px; color: var(--on-surface); text-decoration: none; }
+        .nav-item.active { background: rgba(25, 118, 210, 0.1); color: var(--primary); }
+        .nav-item span { font-size: 10px; margin-top: 4px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .video-card { position: relative; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; cursor: pointer; }
+        .video-thumbnail { width: 100%; height: 100%; object-fit: cover; }
+        .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(0, 0, 0, 0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+        .modal.active { display: flex; }
+        .modal-content { background: var(--surface); border-radius: 16px; padding: 24px; max-width: 500px; width: 100%; max-height: 80vh; overflow-y: auto; }
+    </style>
+</head>
+<body>
+
+    <button class="fab" id="themeToggle">
+        <span class="material-icons">dark_mode</span>
+    </button>
+
+    <main class="p-4">
+        <h1 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span class="material-icons">video_library</span>
+            ভিডিও গ্যালারি
+        </h1>
+        
+        <div class="video-grid">
+            <div class="material-card overflow-hidden">
+                <div class="video-card" onclick="openVideoModal('speech1')">
+                    <img src="https://via.placeholder.com/300x200/1976d2/ffffff?text=Video+1" alt="ভাষণ ১" class="video-thumbnail">
+                    <div class="play-button"><span class="material-icons">play_arrow</span></div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold mb-2">কোটা সংস্কার আন্দোলনে ভাষণ</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">ছাত্রদের ন্যায্য দাবি আদায়ে প্রদত্ত জ্বালাময়ী ভাষণ</p>
+                </div>
+            </div>
+            
+            <div class="material-card overflow-hidden">
+                <div class="video-card" onclick="openVideoModal('interview1')">
+                    <img src="https://via.placeholder.com/300x200/4caf50/ffffff?text=Video+2" alt="সাক্ষাৎকার" class="video-thumbnail">
+                    <div class="play-button"><span class="material-icons">play_arrow</span></div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold mb-2">টেলিভিশন সাক্ষাৎকার</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">শিক্ষা ব্যবস্থার উন্নয়ন নিয়ে আলোচনা</p>
+                </div>
+            </div>
+
+             <div class="material-card overflow-hidden">
+                <div class="video-card" onclick="openVideoModal('rally1')">
+                    <img src="https://via.placeholder.com/300x200/f44336/ffffff?text=Video+3" alt="সমাবেশ" class="video-thumbnail">
+                    <div class="play-button"><span class="material-icons">play_arrow</span></div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold mb-2">ছাত্র সমাবেশ</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">কার্জন হলে অনুষ্ঠিত বিশাল ছাত্র সমাবেশ</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold" id="videoTitle">ভিডিও</h3>
+                <button onclick="closeVideoModal()" class="material-icons text-gray-500 hover:text-gray-700">close</button>
+            </div>
+            <div class="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                 <iframe id="videoFrame" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
+                <div id="videoPlaceholder">
+                    <p class="text-gray-500">ভিডিও লোড হচ্ছে...</p>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-400" id="videoDescription">
+                এই ভিডিওটি শীঘ্রই উপলব্ধ হবে।
+            </p>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="material-icons">home</span>
+            <span>হোম</span>
+        </a>
+        <a href="biography.html" class="nav-item">
+            <span class="material-icons">person</span>
+            <span>জীবনী</span>
+        </a>
+        <a href="movement.html" class="nav-item">
+            <span class="material-icons">history</span>
+            <span>আন্দোলন</span>
+        </a>
+        <a href="videos.html" class="nav-item active">
+            <span class="material-icons">video_library</span>
+            <span>ভিডিও</span>
+        </a>
+        <a href="vision.html" class="nav-item">
+            <span class="material-icons">visibility</span>
+            <span>ভিশন</span>
+        </a>
+        <a href="poetry.html" class="nav-item">
+            <span class="material-icons">auto_stories</span>
+            <span>কবিতা</span>
+        </a>
+        <a href="volunteer.html" class="nav-item">
+            <span class="material-icons">volunteer_activism</span>
+            <span>যোগদান</span>
+        </a>
+    </nav>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<span class="material-icons">dark_mode</span>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Video Modal Logic
+        const videoData = {
+            'speech1': {
+                title: 'কোটা সংস্কার আন্দোলনে ভাষণ',
+                description: 'ছাত্রদের ন্যায্য দাবি আদায়ে প্রদত্ত জ্বালাময়ী ভাষণ।',
+                videoId: 'dQw4w9WgXcQ' // Example YouTube ID
+            },
+            'interview1': {
+                title: 'টেলিভিশন সাক্ষাৎকার',
+                description: 'শিক্ষা ব্যবস্থার উন্নয়ন নিয়ে একটি জাতীয় টেলিভিশনে প্রদত্ত সাক্ষাৎকার।',
+                videoId: '3JZ_D3ELwOQ' // Example YouTube ID
+            },
+             'rally1': {
+                title: 'ছাত্র সমাবেশ',
+                description: 'ঢাকা বিশ্ববিদ্যালয়ের কার্জন হলে অনুষ্ঠিত বিশাল ছাত্র সমাবেশের দৃশ্য।',
+                videoId: 'fC7oUOUEEi4' // Example YouTube ID
+            }
+        };
+
+        const modal = document.getElementById('videoModal');
+        const videoTitle = document.getElementById('videoTitle');
+        const videoDescription = document.getElementById('videoDescription');
+        const videoFrame = document.getElementById('videoFrame');
+        const videoPlaceholder = document.getElementById('videoPlaceholder');
+        
+        function openVideoModal(videoIdKey) {
+            const video = videoData[videoIdKey];
+            if (video) {
+                videoTitle.textContent = video.title;
+                videoDescription.textContent = video.description;
+                videoFrame.src = `https://www.youtube.com/embed/${video.videoId}`;
+                videoFrame.style.display = 'block';
+                videoPlaceholder.style.display = 'none';
+            }
+            modal.classList.add('active');
+        }
+
+        function closeVideoModal() {
+            modal.classList.remove('active');
+            videoFrame.src = ''; // Stop the video from playing in the background
+        }
+    </script>
+</body>
+</html>

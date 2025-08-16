@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভবিষ্যতের স্বপ্ন - জিসান ভাই</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#1976d2">
+    <style>
+        :root {
+            --primary: #1976d2; --primary-variant: #1565c0; --secondary: #03dac6; --background: #ffffff; --surface: #ffffff; --error: #b00020; --on-primary: #ffffff; --on-secondary: #000000; --on-background: #000000; --on-surface: #000000; --on-error: #ffffff; --shadow: rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] {
+            --primary: #90caf9; --primary-variant: #64b5f6; --secondary: #03dac6; --background: #121212; --surface: #1e1e1e; --error: #cf6679; --on-primary: #000000; --on-secondary: #000000; --on-background: #ffffff; --on-surface: #ffffff; --on-error: #000000; --shadow: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans Bengali', 'Inter', sans-serif; background-color: var(--background); color: var(--on-background); transition: all 0.3s ease; overflow-x: hidden; }
+        main { min-height: 100vh; padding-bottom: 80px; padding-top: 20px; }
+        .material-card { background: var(--surface); border-radius: 16px; box-shadow: 0 2px 8px var(--shadow); transition: all 0.3s ease; }
+        .material-card:hover { box-shadow: 0 4px 16px var(--shadow); transform: translateY(-2px); }
+        .fab { position: fixed; bottom: 100px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--primary); color: var(--on-primary); border: none; box-shadow: 0 4px 12px var(--shadow); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 40; }
+        .fab:hover { transform: scale(1.1); }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--shadow); display: flex; justify-content: space-around; padding: 8px 0; z-index: 50; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; padding: 8px 12px; cursor: pointer; transition: all 0.3s ease; border-radius: 12px; min-width: 64px; color: var(--on-surface); text-decoration: none; }
+        .nav-item.active { background: rgba(25, 118, 210, 0.1); color: var(--primary); }
+        .nav-item span { font-size: 10px; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+    <button class="fab" id="themeToggle">
+        <span class="material-icons">dark_mode</span>
+    </button>
+
+    <main class="p-4">
+        <h1 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span class="material-icons">visibility</span>
+            ভবিষ্যতের স্বপ্ন
+        </h1>
+        
+        <div class="material-card p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-center">আমাদের ভিশন ২০৩০</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-6">
+                "একটি আধুনিক, প্রগতিশীল ও ছাত্রবান্ধব ঢাকা বিশ্ববিদ্যালয় গড়ে তোলা"
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-blue-600 text-2xl">school</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">শিক্ষার মান</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">বিশ্বমানের শিক্ষা ব্যবস্থা ও গবেষণার সুবিধা</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-green-600 text-2xl">computer</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">ডিজিটাল ক্যাম্পাস</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">সম্পূর্ণ ডিজিটাল সেবা ও স্মার্ট ক্লাসরুম</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-purple-600 text-2xl">groups</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">ছাত্র কল্যাণ</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">সকল ছাত্রের জন্য সমান সুযোগ ও সুবিধা</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="space-y-4">
+            <div class="material-card p-6">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span class="material-icons text-blue-600">lightbulb</span>
+                    শিক্ষা ক্ষেত্রে পরিকল্পনা
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="material-icons text-green-600 mt-1">arrow_forward</span>
+                        <div>
+                            <h4 class="font-medium">আধুনিক পাঠ্যক্রম</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">বাজারের চাহিদা অনুযায়ী পাঠ্যক্রম আপডেট</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-icons text-green-600 mt-1">arrow_forward</span>
+                        <div>
+                            <h4 class="font-medium">গবেষণা সুবিধা</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">উন্নত গবেষণাগার ও আন্তর্জাতিক সহযোগিতা</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="material-card p-6">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <span class="material-icons text-green-600">eco</span>
+                    ক্যাম্পাস উন্নয়ন
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="material-icons text-green-600 mt-1">arrow_forward</span>
+                        <div>
+                            <h4 class="font-medium">সবুজ ক্যাম্পাস</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">পরিবেশবান্ধব ও টেকসই উন্নয়ন</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start gap-3">
+                        <span class="material-icons text-green-600 mt-1">arrow_forward</span>
+                        <div>
+                            <h4 class="font-medium">আধুনিক হল</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">নিরাপদ ও আরামদায়ক আবাসন ব্যবস্থা</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="material-icons">home</span>
+            <span>হোম</span>
+        </a>
+        <a href="biography.html" class="nav-item">
+            <span class="material-icons">person</span>
+            <span>জীবনী</span>
+        </a>
+        <a href="movement.html" class="nav-item">
+            <span class="material-icons">history</span>
+            <span>আন্দোলন</span>
+        </a>
+        <a href="videos.html" class="nav-item">
+            <span class="material-icons">video_library</span>
+            <span>ভিডিও</span>
+        </a>
+        <a href="vision.html" class="nav-item active">
+            <span class="material-icons">visibility</span>
+            <span>ভিশন</span>
+        </a>
+        <a href="poetry.html" class="nav-item">
+            <span class="material-icons">auto_stories</span>
+            <span>কবিতা</span>
+        </a>
+        <a href="volunteer.html" class="nav-item">
+            <span class="material-icons">volunteer_activism</span>
+            <span>যোগদান</span>
+        </a>
+    </nav>
+
+    <script>
+        // Theme Management (Same as index.html)
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<span class="material-icons">dark_mode</span>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

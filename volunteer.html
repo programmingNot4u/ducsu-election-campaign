@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্বেচ্ছাসেবক হিসেবে যোগদান - জিসান ভাই</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#1976d2">
+    <style>
+        :root {
+            --primary: #1976d2; --primary-variant: #1565c0; --secondary: #03dac6; --background: #ffffff; --surface: #ffffff; --error: #b00020; --on-primary: #ffffff; --on-secondary: #000000; --on-background: #000000; --on-surface: #000000; --on-error: #ffffff; --shadow: rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] {
+            --primary: #90caf9; --primary-variant: #64b5f6; --secondary: #03dac6; --background: #121212; --surface: #1e1e1e; --error: #cf6679; --on-primary: #000000; --on-secondary: #000000; --on-background: #ffffff; --on-surface: #ffffff; --on-error: #000000; --shadow: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans Bengali', 'Inter', sans-serif; background-color: var(--background); color: var(--on-background); transition: all 0.3s ease; overflow-x: hidden; }
+        main { min-height: 100vh; padding-bottom: 80px; padding-top: 20px; }
+        .material-card { background: var(--surface); border-radius: 16px; box-shadow: 0 2px 8px var(--shadow); transition: all 0.3s ease; }
+        .material-card:hover { box-shadow: 0 4px 16px var(--shadow); transform: translateY(-2px); }
+        .fab { position: fixed; bottom: 100px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--primary); color: var(--on-primary); border: none; box-shadow: 0 4px 12px var(--shadow); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 40; }
+        .fab:hover { transform: scale(1.1); }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--shadow); display: flex; justify-content: space-around; padding: 8px 0; z-index: 50; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; padding: 8px 12px; cursor: pointer; transition: all 0.3s ease; border-radius: 12px; min-width: 64px; color: var(--on-surface); text-decoration: none; }
+        .nav-item.active { background: rgba(25, 118, 210, 0.1); color: var(--primary); }
+        .nav-item span { font-size: 10px; margin-top: 4px; }
+        .form-field { margin-bottom: 16px; }
+        .form-field label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 8px; background: var(--surface); color: var(--on-surface); transition: border-color 0.3s ease; }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { outline: none; border-color: var(--primary); }
+        .btn { padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: var(--on-primary); }
+        .btn-primary:hover { background: var(--primary-variant); transform: translateY(-2px); }
+        .loading { display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid var(--on-primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .toast { position: fixed; top: 20px; right: 20px; padding: 16px 24px; border-radius: 8px; color: white; font-weight: 500; z-index: 200; transform: translateX(400px); transition: transform 0.3s ease; }
+        .toast.show { transform: translateX(0); }
+        .toast.success { background: #4caf50; }
+        .toast.error { background: #f44336; }
+    </style>
+</head>
+<body>
+
+    <button class="fab" id="themeToggle">
+        <span class="material-icons">dark_mode</span>
+    </button>
+
+    <main class="p-4">
+        <h1 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span class="material-icons">volunteer_activism</span>
+            স্বেচ্ছাসেবক হিসেবে যোগদান
+        </h1>
+        
+        <div class="material-card p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-center">আমাদের সাথে যুক্ত হন</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-6">
+                ছাত্রদের অধিকার রক্ষা ও বিশ্ববিদ্যালয়ের উন্নয়নে আমাদের সাথে কাজ করুন
+            </p>
+            
+            <form id="volunteerForm" class="space-y-4" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-field">
+                        <label for="fullName">পূর্ণ নাম *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="studentId">শিক্ষার্থী আইডি *</label>
+                        <input type="text" id="studentId" name="studentId" required>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label for="department">বিভাগ *</label>
+                    <select id="department" name="department" required>
+                        <option value="">বিভাগ নির্বাচন করুন</option>
+                        <option value="রাষ্ট্রবিজ্ঞান">রাষ্ট্রবিজ্ঞান</option>
+                        <option value="অর্থনীতি">অর্থনীতি</option>
+                        <option value="সমাজবিজ্ঞান">সমাজবিজ্ঞান</option>
+                        <option value="অন্যান্য">অন্যান্য</option>
+                    </select>
+                </div>
+                
+                <div class="form-field">
+                    <label for="phone">মোবাইল নম্বর *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="motivation">যোগদানের কারণ *</label>
+                    <textarea id="motivation" name="motivation" rows="4" placeholder="কেন আমাদের সাথে কাজ করতে চান?" required></textarea>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="text-sm">
+                        আমি <a href="#" class="text-blue-600 hover:underline">নিয়মাবলী</a> পড়েছি এবং সম্মত আছি
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-full" id="submitBtn">
+                    <span class="material-icons">send</span>
+                    আবেদন জমা দিন
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="material-icons">home</span>
+            <span>হোম</span>
+        </a>
+        <a href="biography.html" class="nav-item">
+            <span class="material-icons">person</span>
+            <span>জীবনী</span>
+        </a>
+        <a href="movement.html" class="nav-item">
+            <span class="material-icons">history</span>
+            <span>আন্দোলন</span>
+        </a>
+        <a href="videos.html" class="nav-item">
+            <span class="material-icons">video_library</span>
+            <span>ভিডিও</span>
+        </a>
+        <a href="vision.html" class="nav-item">
+            <span class="material-icons">visibility</span>
+            <span>ভিশন</span>
+        </a>
+        <a href="poetry.html" class="nav-item">
+            <span class="material-icons">auto_stories</span>
+            <span>কবিতা</span>
+        </a>
+        <a href="volunteer.html" class="nav-item active">
+            <span class="material-icons">volunteer_activism</span>
+            <span>যোগদান</span>
+        </a>
+    </nav>
+    
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<span class="material-icons">dark_mode</span>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<span class="material-icons">light_mode</span>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Toast Notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+
+        // Form Validation
+        function validateForm() {
+            const form = document.getElementById('volunteerForm');
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                let isFieldValid = true;
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        isFieldValid = false;
+                    }
+                } else {
+                    if (!field.value.trim()) {
+                        isFieldValid = false;
+                    }
+                }
+
+                if (!isFieldValid) {
+                    field.style.borderColor = 'var(--error)';
+                    // For checkbox, you might want a different visual cue
+                    if(field.type === 'checkbox') {
+                        field.parentElement.style.color = 'var(--error)';
+                    }
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#e0e0e0';
+                    if(field.type === 'checkbox') {
+                        field.parentElement.style.color = 'var(--on-surface)';
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+        
+        // Form Handling
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                showToast('দয়া করে সকল প্রয়োজনীয় তথ্য পূরণ করুন।', 'error');
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<div class="loading"></div> জমা হচ্ছে...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showToast('আপনার আবেদন সফলভাবে জমা হয়েছে!', 'success');
+                
+                // Reset form
+                this.reset();
+                // Reset styles after successful submission
+                this.querySelectorAll('[required]').forEach(field => {
+                     field.style.borderColor = '#e0e0e0';
+                     if(field.type === 'checkbox') {
+                        field.parentElement.style.color = 'var(--on-surface)';
+                    }
+                });
+
+            }, 2000);
+        });
+
+    </script>
+</body>
+</html>
